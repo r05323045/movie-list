@@ -1,0 +1,14 @@
+.card-body {
+    padding: 20px 15px;
+}
+.card-content {
+    
+}
+.card-content .genre-in-card {
+    display: inline-block;
+    white-space: nowrap;
+    font-size: 12px;
+    margin: 3px;
+    padding: 3px 6px;
+    color: #919191;
+}
