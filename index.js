@@ -65,6 +65,14 @@
                     const genreId = Number(event.target.parentElement.parentElement.dataset.pagination)
                     const movieInGenre = data.filter(movie => movie.genres.includes(genreId))
                     document.getElementById(`movies-row-${genreId}`).innerHTML = getPageData(Number(event.target.dataset.page), movieInGenre)
+                    document.getElementById(`movies-row-${genreId}`).querySelectorAll('.card').forEach(card => {
+                        card.addEventListener('click', event => {
+                            if (event.target.classList.contains('genre-in-card')) {
+                                const order = Number(event.target.dataset.genre)
+                                $(`#genre-list li:nth-child(${order}) a`).tab('show')
+                            }    
+                        })
+                    })
                     paginationActive(event, genreId)
                 }
             })
